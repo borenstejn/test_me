@@ -1,0 +1,2 @@
+class FlurbosController < ApplicationController
+end
