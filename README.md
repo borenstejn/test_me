@@ -13,3 +13,4 @@ You're going to create a small API with the following endpoints:
 * You should approach this task as if it's going to production after being reviewed by others developers
 * You can use any external library/database/tool you want, as long as you can explain with you chose it
 * Responses should be in JSON
+* The solution must work with mySQL and ruby >= 2.5
