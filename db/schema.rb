@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_140655) do
+ActiveRecord::Schema.define(version: 2020_01_14_111754) do
 
   create_table "flurbos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "owner", limit: 191, null: false
-    t.integer "total", null: false
+    t.integer "balance", null: false
   end
 
   create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
