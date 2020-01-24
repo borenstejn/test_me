@@ -7,7 +7,7 @@ cannot be less than 0, so if a transaction would make it pass below 0, the trans
 
 * An endpoint to retrieve an owner's `Flurbo`. It takes the `owner` as parameter and return the balance of the flurbo.
 
-* For monitoring purposes, we want to track the number of times per day, owners try uses the endpoint to retrieve their flurbo. You'll have to add some tracking on the precedent endpoint to be able to create another endpoint that returns the number of times clients accessed their flurbo in the last 7 days (you can choose the response's format as you see best). We want this to be scalable between processes, so no in-memory solution.
+* For monitoring purposes, we want to track the number of times per day, owners try uses the endpoint to retrieve their flurbo. You'll have to add some tracking on the precedent endpoint to be able to create another endpoint that returns the number of times clients accessed their flurbo in the last 7 days (you can choose the response's format as you see best). We want this to be scalable between processes (think multiple unicorn processes), so no in-memory solution, ie. no global variable/state stored uniquely in process' memory.
 
 # Tips
 
