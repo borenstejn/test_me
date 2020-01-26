@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_163857) do
+ActiveRecord::Schema.define(version: 2020_01_26_204128) do
 
   create_table "flurbos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "balance", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_flurbos_on_user_id"
+  end
+
+  create_table "tracker_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "endpoint"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tracker_events_on_user_id"
   end
 
   create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -33,5 +41,6 @@ ActiveRecord::Schema.define(version: 2020_01_26_163857) do
   end
 
   add_foreign_key "flurbos", "users"
+  add_foreign_key "tracker_events", "users"
   add_foreign_key "transactions", "users"
 end

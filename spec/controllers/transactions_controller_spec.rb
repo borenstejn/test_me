@@ -13,7 +13,7 @@ RSpec.describe TransactionsController, type: :controller do
       expect do
         post :create, params: {user_id: @user.id, amount: 300_00}
       end.to change { ActionMailer::Base.deliveries.count }.by(1)
-      expect(response.code).to eq('200')
+      expect(response.code).to eq('201')
       expect(@flurbo.reload.balance).to eq(700_00)
       expect(JSON.parse(response.body).slice('amount', 'user_id'))
         .to  eq({'user_id' => @user.id, 'amount' => 300_00})

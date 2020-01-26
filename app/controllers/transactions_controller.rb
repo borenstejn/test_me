@@ -9,7 +9,7 @@ class TransactionsController < ApplicationController
       @transaction.update(additional_infos: 'accepted')
       @flurbo.update!(balance: new_balance)
       TransactionMailer.with(transaction: @transaction, flurbo: @flurbo, user: @transaction.user).complete.deliver
-      render status: 200, json: @transaction
+      render status: 201, json: @transaction
     else
       @transaction.update(additional_infos: 'refused')
       render status: 403, json: { message: "L'utilisateur n'a pas assez de crédit" }
