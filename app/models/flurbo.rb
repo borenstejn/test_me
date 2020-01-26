@@ -1,3 +1,5 @@
 class Flurbo < ApplicationRecord
-  validates :owner, presence: true
+  validates :user, presence: true
+
+  belongs_to :user
 end
